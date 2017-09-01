@@ -1,0 +1,4 @@
+MainPackage=E:\GED-30may\GED\GED\bin\x86\Release\GED_0.5.2.12_x86.appx
+SymbolPackage=E:\GED-30may\GED\GED\AppPackages\version5.2.12\GED_0.5.2.12_Test\GED_0.5.2.12_x86.appxsym
+ResourcePack=E:\GED-30may\GED\GED\bin\x86\Release\GED_0.5.2.12_scale-140.appx
+ResourcePack=E:\GED-30may\GED\GED\bin\x86\Release\GED_0.5.2.12_scale-180.appx

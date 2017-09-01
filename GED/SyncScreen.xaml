@@ -1,0 +1,48 @@
+﻿<Page
+    x:Name="pageRoot"
+    x:Class="GED.SyncScreen"
+    DataContext="{Binding DefaultViewModel, RelativeSource={RelativeSource Self}}"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:GED"
+    xmlns:common="using:GED.Common"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <!-- TODO: Delete this line if the key AppName is declared in App.xaml -->
+        <x:String x:Key="AppName">GlobalSpace</x:String>
+    </Page.Resources>
+
+    <!--
+        This grid acts as a root panel for the page that defines two rows:
+        * Row 0 contains the back button and page title
+        * Row 1 contains the rest of the page layout
+    -->
+    <Grid >
+        <Grid.ChildrenTransitions>
+            <TransitionCollection>
+                <EntranceThemeTransition/>
+            </TransitionCollection>
+        </Grid.ChildrenTransitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="140"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- Back button and page title -->
+        <Grid>
+
+            <TextBlock x:Name="pageTitle" Text="{StaticResource AppName}" Style="{StaticResource HeaderTextBlockStyle}" 
+                        IsHitTestVisible="false" TextWrapping="NoWrap" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0,0,0,40"/>
+            <ProgressBar x:Name="progressBar" IsIndeterminate="True" Height="10" Margin="-16,626,16,-496" Visibility="Visible"/>
+            <TextBlock x:Name="NoInternet" Style="{StaticResource HeaderTextBlockStyle}"  HorizontalAlignment="Center" TextWrapping="NoWrap" Text="Please Connect to Internet" VerticalAlignment="Center" Margin="370,314,377,-288" Height="114" Width="619" Visibility="Collapsed"/>
+            <TextBlock x:Name="NoLocalHost" Style="{StaticResource HeaderTextBlockStyle}"  HorizontalAlignment="Center" TextWrapping="NoWrap" Text="Please Start Server" VerticalAlignment="Center" Margin="370,314,377,-288" Height="114" Width="619" Visibility="Collapsed"/>
+            <TextBlock x:Name="ConnectionErr" Style="{StaticResource HeaderTextBlockStyle}"  HorizontalAlignment="Center" TextWrapping="NoWrap" Text="Connection Error" VerticalAlignment="Center" Margin="370,314,377,-288" Height="114" Width="619" Visibility="Collapsed"/>
+
+
+        </Grid>
+        <Button x:Name="nextButton" Content="Next" HorizontalAlignment="Left" Margin="606,545,0,0" Grid.Row="1" VerticalAlignment="Top" Width="150" Click="Next_Click" Visibility="Collapsed"/>
+    </Grid>
+</Page>
